@@ -1,3 +1,17 @@
+// const gameSection1 = document.getElementById("1")
+// const gameSection2 = document.getElementById("2")
+// const gameSection3 = document.getElementById("3")
+// const gameSection4 = document.getElementById("4")
+// const gameSection5 = document.getElementById("5")
+// const gameSection6 = document.getElementById("6")
+// const gameSection7 = document.getElementById("7")
+// const gameSection8 = document.getElementById("8")
+// const gameSection9 = document.getElementById("9")
+
+// document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', handleCellClick));
+
+
+
 // board for the game
 // const board = [[" ", " " , " "],
 //                [" ", " " , " "],
