@@ -6,7 +6,7 @@ const statusText = document.querySelector('#status-text')
 const boardArray = document.querySelectorAll('.cell')
 boardArray.forEach(cell => cell.addEventListener('click', updateCell))
 document.querySelector('.restart-button').addEventListener('click', restartGame) 
-console.log('boardArray', boardArray)
+// console.log('boardArray', boardArray)
 
 
 // Listing out the items in the array for all possible ways to win. 
@@ -18,8 +18,8 @@ const winConditions = [
         [0, 3, 6],
         [1, 4, 7],
         [2, 5, 8],
-        [6, 4, 2],
-        [8, 4, 0],
+        [0, 4, 8],
+        [2, 4, 6],
 ]
 
 
@@ -65,7 +65,7 @@ function checkForWinner(){
         const cellB = winConditions[i][1]
         const cellC = winConditions[i][2]
 
-        console.log('cellABCof ', i, cellA, cellB, cellC)
+        // console.log('cellABCof ', i, cellA, cellB, cellC)
         
         if(boardArray[cellA].textContent === '' || boardArray[cellB].textContent === '' || boardArray[cellC].textContent === ''){
             continue;
@@ -75,10 +75,13 @@ function checkForWinner(){
             if ((boardArray[cellA].textContent === boardArray[cellB].textContent) && (boardArray[cellA].textContent === boardArray[cellC].textContent)) {
 
                 roundWon === true;
+                statusText.textContent = `${currentPlayer}wins!`
                 console.log('winner', currentPlayer)
-                playerChange()
+                running = false
                 break;
             }
+
+            
     // }
 }
         if(roundWon){
