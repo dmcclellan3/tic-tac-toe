@@ -14,14 +14,16 @@ h1 {
   justify-content: center;
 }
 
-section {
+.flex-container {
   text-align: center;
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: 10px;
   margin: auto;
-  margin-top: 75px;
+  /* margin-top: 90px; */
   width: 400px;
+  height: 300px;
   background-color: whitesmoke;
+  justify-content: center;
 }
 
 .game--container {
@@ -32,15 +34,18 @@ section {
   justify-content: center;
   grid-template-columns: repeat(3, auto);
   margin-bottom: 20px;
-  margin-top: 20px;
+  margin-top: 40px;
+  padding-top: 45px;
 }
 
 .cell{
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
   border: 1px solid black;
   line-height: 50px;
   font-size: 50px;
+  /* justify-content: center; */
+  /* align-items: center; */
 }
 
 
