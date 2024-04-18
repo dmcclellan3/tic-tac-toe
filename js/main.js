@@ -3,8 +3,8 @@
 const cells = document.querySelectorAll('.cell')
 const restartBtn = document.querySelector('restart-button')
 const statusText = document.querySelector('status-text')
-document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', handleCellClick))
-document.querySelector('restart-game').addEventListener('click', handleRestartGame) 
+document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', updateCell))
+document.querySelector('restart-button').addEventListener('click', restartGame) 
 
 // Listing out the items in the array for all possible ways to win. 
 
@@ -21,12 +21,16 @@ const winConditions = [
 
 
 let currentPlayer = "X"
-let selections = ["", "", "", "", "", "", "", "", ""]
+let selection = ["", "", "", "", "", "", "", "", ""]
 let running = "false"
 
 //all the functions needed for the game
 
 function startGame(){
+
+    document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', updateCell))
+    document.querySelector('restart-button').addEventListener('click', restartGame) 
+    statusText.textContent = `${currentPlayer}s turn`
 
 }
 
@@ -34,53 +38,53 @@ function restartGame(){
 
 }
 
-// function handleCellClick() {
-//     alert('Hello');
-// }
 
-function updateCell(cell, index){
-    
+//closest finding what element we are in.  Whatever was clicked give us the closest parent that has a cell class. 
+function updateCell(event){
+    const cell = event.target.closest('.cell')
+    cell.textContent = 'X'
+    console.log('cell', cell.getAttribute('data-cell-index'))
 }
 
 function checkForWinner(){
 
+    let roundWin = false
+    for (let i = 0; i < winConditions.length; i++){
+    const condition = winConditions[i]
+    const cellA = selection[condition[0]]
+    const cellB = selection[condition[1]]
+    const cellC = selection[condition[2]]
+
+        if(cellA == '' || cellB == '' || cellC == ''){
+        continue;
+        }
+        if(cellA == cellB && cellB == cellC){
+        roundWin == true;
+        break;
+        }
+    }
+        if(roundWin){
+            statusText.textContent = `${currentPlayer}wins!`
+            running = false
+        }
+        else if(!selection.includes('')){
+            statusText.textContent = 'Draw!'
+            running = false
+        }
+
 }
+
+
 
 function playerChange(){
+    
+    currentPlayer = (currentPlayer == 'X') ? "O" : "X"
+    statusText.textContent = `${currentPlayer}'s turn`
+}
+
+function gameOver(){
 
 }
 
 
 
-// board for the game
-// const board = [[" ", " " , " "],
-//                [" ", " " , " "],
-//                [" ", " " , " "],
-// ]
-
-// const game = {  //object for the game
-//     update : function(){}
-//     isgameOver: function(){},
-//     move : function(c){},
-//     possibleMoves : function(){
-//         const p = []
-
-//         for(let i = 0; i < board.length; i++){
-//             for(let j = 0; j < board[0].length; j++){
-//                 if(board[i][j] === " "){
-//                     p.push({row: i, col: j})
-//                 }
-//             }
-//         }
-//         return p
-
-//         updateBoard : function(){
-//         console.log("  ") //empty space for the board
-//         board.forEach((arr, i) => {
-//         console.log(arr.toString().replace(/,/g, "|"))
-//         //changing an array to a string and replacing the commas with lines to configure the board
-//         })
-//         }
- 
-//     }
-// }
