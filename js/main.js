@@ -7,6 +7,7 @@ document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click'
 document.querySelector('restart-game').addEventListener('click', handleRestartGame) 
 
 // Listing out the items in the array for all possible ways to win. 
+
 const winConditions = [
         [0, 1, 2],
         [3, 4, 5],
