@@ -1,14 +1,53 @@
-// const gameSection1 = document.getElementById("1")
-// const gameSection2 = document.getElementById("2")
-// const gameSection3 = document.getElementById("3")
-// const gameSection4 = document.getElementById("4")
-// const gameSection5 = document.getElementById("5")
-// const gameSection6 = document.getElementById("6")
-// const gameSection7 = document.getElementById("7")
-// const gameSection8 = document.getElementById("8")
-// const gameSection9 = document.getElementById("9")
+// Bringing over elements that are needed
 
-// document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', handleCellClick));
+const cells = document.querySelectorAll('.cell')
+const restartBtn = document.querySelector('restart-button')
+const statusText = document.querySelector('status-text')
+document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', handleCellClick))
+document.querySelector('restart-game').addEventListener('click', handleRestartGame) 
+
+// Listing out the items in the array for all possible ways to win. 
+const winConditions = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [6, 4, 2],
+        [8, 4, 0],
+]
+
+
+let currentPlayer = "X"
+let selections = ["", "", "", "", "", "", "", "", ""]
+let running = "false"
+
+//all the functions needed for the game
+
+function startGame(){
+
+}
+
+function restartGame(){
+
+}
+
+// function handleCellClick() {
+//     alert('Hello');
+// }
+
+function updateCell(cell, index){
+    
+}
+
+function checkForWinner(){
+
+}
+
+function playerChange(){
+
+}
 
 
 
