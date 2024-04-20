@@ -76,7 +76,7 @@ function checkForWinner() {
     
         if (!roundWon && !Array.from(boardArray).some(cell => cell.textContent === '')) {
         statusText.textContent = 'Draw!'  //If there hasn't been a player win the game and there isn't any spaces left the game is a draw. 
-        running = false
+        running = false                     //.some checks to see if an array item passes a test.  In this case if there are no spaces remaining. 
         } 
 
     }
