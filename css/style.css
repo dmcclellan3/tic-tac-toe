@@ -1,3 +1,57 @@
-h1 {
-  color: pink;
+body{
+  padding: 100px;
+  margin: 20px;
+  align-items: center;
+  justify-content: center;
+  background: rgb(34,193,195);
+  background: linear-gradient(275deg, rgba(34,193,195,1) 0%, rgba(94,87,70,0.7469581582633054) 100%);
 }
+
+
+h1 {
+  color: black;
+  text-align: center;
+  justify-content: center;
+}
+
+.flex-container {
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 10px;
+  margin: auto;
+  width: 400px;
+  height: 350px;
+  background-color: rgb(224, 223, 223);
+  justify-content: center;
+}
+
+.game--container {
+  
+  display: grid;
+  width: 150px;
+  margin: 120px;
+  justify-content: center;
+  grid-template-columns: repeat(3, auto);
+  margin-bottom: 20px;
+  margin-top: 40px;
+  padding-top: 60px;
+  padding-left: 10px;
+}
+
+.cell{
+  width: 70px;
+  height: 70px;
+  border: 1.5px solid black;
+  line-height: 50px;
+  font-size: 50px;
+
+}
+
+button{
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background-color: rgb(164, 164, 164);
+}
+
+

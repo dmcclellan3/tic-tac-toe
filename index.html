@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Hello!</title>
+    <title>Tic-Tac-Toe</title>
     <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,9 +10,22 @@
     <!-- project styles -->
     <link rel="stylesheet" href="./css/style.css">
   </head>
-  <body class="bg-primary">
-    <div id="app">
-      <h1>Hello!</h1>
+  <body>
+    <h1>Tic-Tac-Toe</h1>
+    <div class="flex-container">
+      <div class="game--container">
+        <div data-cell-index="0" class="cell"></div>
+        <div data-cell-index="1" class="cell"></div>
+        <div data-cell-index="2" class="cell"></div>
+        <div data-cell-index="3" class="cell"></div>
+        <div data-cell-index="4" class="cell"></div>
+        <div data-cell-index="5" class="cell"></div>
+        <div data-cell-index="6" class="cell"></div>
+        <div data-cell-index="7" class="cell"></div>
+        <div data-cell-index="8" class="cell"></div>
+      </div>
+      <button class="restart-button">Restart</button>
+      <h2 id="status-text"></h2>
     </div>
 
     <!-- BootStrap JavaScript -->
